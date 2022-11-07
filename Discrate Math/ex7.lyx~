@@ -1,0 +1,980 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+\newfontfamily{\ls}{League Script}
+\newfontfamily{\am}{Amatic SC}
+
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern -3pt
+  \hbox to \textwidth{\hfill\vrule height 0.4pt width .4\textwidth}
+  \kern 2.6pt
+}}
+
+\usepackage[x11names,usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{adforn}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{automata}
+\usetikzlibrary{decorations.pathreplacing}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+\addtokomafont{disposition}{\rmfamily}
+\rhead{\textbf{תגבור דיסקרטית}}
+\lhead{\emph{תרגיל 7}}
+\cfoot{\adforn{27}\ls\textbf{\hspace{0.2cm}\thepage\hspace{0.2cm}}\adforn{61}}
+\end_preamble
+\options numbers=noenddot
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-bytype
+theorems-ams-extended-chap-bytype
+theorems-ams-extended-bytype
+theorems-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\bar under
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+fontsize{25}{40}
+\backslash
+selectfont{מתמטיקה דיסקרטית - תרגיל 7}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Domino.jpg
+	scale 700
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+אינדוקציה
+\end_layout
+
+\begin_layout Subsection
+רקע
+\end_layout
+
+\begin_layout Standard
+המון פעמים נרצה להוכיח טענה מתמטית שכוללת את הכמת 
+\series bold
+לכל
+\series default
+, למשל:
+\end_layout
+
+\begin_layout Standard
+נסתכל על הקבוצה הבאה: 
+\begin_inset Formula $A=\left\{ 9,17,26,36,92,15,63\right\} $
+\end_inset
+
+ אנחנו נרצה להוכיח כי 
+\series bold
+לא קיים
+\series default
+ איבר הקטן מ-
+\begin_inset Formula $5$
+\end_inset
+
+, או במילים אחרות: 
+\series bold
+כל
+\series default
+ האיברים בקבוצה גדולים מ-
+\begin_inset Formula $5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן, מה שהכי טבעי שנעשה הוא שנעבור איבר איבר ונבדוק האם הטענה נכונה.
+\end_layout
+
+\begin_layout Standard
+אבל יש מקרים שבהן מדובר על קבוצות אינסופיות, ולכן לא נוכל לבדוק איבר איבר
+ אלא נצטרך להניח הנחה ולהוכיח אותה עבור כל המספרים החל מ-
+\begin_inset Formula $n$
+\end_inset
+
+ מסוים.
+\end_layout
+
+\begin_layout Standard
+זה כמו אבני דומינו שעומדים בשורה וכל אבן שנופלת מפילה את זאת שאחריה:
+\end_layout
+
+\begin_layout Standard
+אם יש לנו אינסוף אבנים, לא נוכל אף פעם להפיל את כולן, אבל האינדוקציה מבטיחה
+ לנו שהאבן שנמצאת 
+\begin_inset Quotes qld
+\end_inset
+
+אי-שם
+\begin_inset Quotes qrd
+\end_inset
+
+ רחוק רחוק - גם היא תיפול.
+\end_layout
+
+\begin_layout Subsection
+תנאים
+\end_layout
+
+\begin_layout Standard
+בשביל להפעיל את האינדוקציה אנחנו נדרוש שני תנאים:
+\end_layout
+
+\begin_layout Condition
+
+\series bold
+מינימליות
+\begin_inset CommandInset label
+LatexCommand label
+name "cond:מינימליות---לכל"
+
+\end_inset
+
+
+\series default
+ - לכל קבוצה שנרצה להוכיח עליה את האינדוקציה יהיה איבר מינימלי אחד ויחיד.
+\end_layout
+
+\begin_deeper
+\begin_layout Condition
+
+\series bold
+האיבר הבא
+\series default
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "cond:האיבר-הבא--"
+
+\end_inset
+
+- לכל איבר בקבוצה נוכל לדעת מה האיבר הבא )ולכן הוא גם חייב להיות יחיד(.
+\end_layout
+
+\end_deeper
+\begin_layout Axiom
+\begin_inset CommandInset label
+LatexCommand label
+name "axm:min"
+
+\end_inset
+
+לכל תת-קבוצה של הטבעיים קיים איבר מינימלי יחיד )תנאי 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond:מינימליות---לכל"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+זאת הסיבה שבגלל באינדוקציה נעבוד רק על 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ )המספרים הטבעיים(.
+\end_layout
+
+\begin_layout Standard
+כל תת-קבוצה של 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ מקיימת את שני התנאים הללו, קבוצות ב-
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ או ב-
+\begin_inset Formula $\mathbb{Q},\mathbb{R}$
+\end_inset
+
+ כמובן לא יכולות לקיים את התנאי הזה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ - ניקח בתור תת-קבוצה את 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ עצמה ואין לנו איבר מינימלי )תנאי 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond:מינימליות---לכל"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{Q},\mathbb{R}$
+\end_inset
+
+ - ניקח למשל את 
+\begin_inset Formula $\frac{1}{4}$
+\end_inset
+
+, מה האיבר שבא אחריו? )אין לזה תשובה חדש משמית(.
+\end_layout
+
+\begin_layout Subsection
+סימון 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Notation*
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+ פירושו טענה על 
+\begin_inset Formula $n$
+\end_inset
+
+ )שבמקרה שלנו אלו המספרים הטבעיים, כלומר מספר טבעי כלשהו(.
+\end_layout
+
+\begin_layout Notation*
+למשל: 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+ = 
+\begin_inset Quotes qld
+\end_inset
+
+הביטוי 
+\begin_inset Formula $2n+1$
+\end_inset
+
+ הוא אי-זוגי
+\begin_inset Quotes qrd
+\end_inset
+
+, וכו'.
+\end_layout
+
+\begin_layout Notation*
+באינדוקציה אנחנו נרצה להוכיח כי טענה 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+ תהיה נכונה לכל 
+\begin_inset Formula $n\ge n_{0}$
+\end_inset
+
+ )במקרה שלנו 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+( החל מ-
+\begin_inset Formula $n_{0}\in\mathbb{N}$
+\end_inset
+
+ מסוים.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+משפט האינקציה
+\end_layout
+
+\begin_layout Subsubsection
+אינדוקציה בסיסית
+\end_layout
+
+\begin_layout Theorem
+תהי 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+ טענה כלשהי לגבי 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ אזי הטענה נכונה אם מתקיימים שני התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+\shape italic
+בסיס האינדוקציה:
+\series default
+ הטענה 
+\begin_inset Formula $P\left(n_{0}\right)$
+\end_inset
+
+
+\shape default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+בהרבה מקומות זה מצוין כ-
+\begin_inset Formula $P\left(0\right)$
+\end_inset
+
+, כלומר עבור 
+\begin_inset Formula $n=0$
+\end_inset
+
+, אבל אני מניח שיש מקרים שהם האיבר המינימלי שעליו מתקיימת האינדוקציה אינו
+ 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\shape italic
+ נכונה.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\shape italic
+שלב האינדוקציה: 
+\series default
+\shape default
+לכל 
+\begin_inset Formula $n>n_{0}$
+\end_inset
+
+ נכונות הטענה
+\series bold
+\shape italic
+ 
+\begin_inset Formula $P\left(n-1\right)$
+\end_inset
+
+ 
+\shape default
+\emph on
+\bar under
+גוררת
+\shape italic
+\emph default
+\bar default
+ 
+\series default
+\shape default
+את הנכונות של 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+
+\shape italic
+\emph on
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+הרעיון המרכזי פה שאחרי שאחרי שהראנו שיש קבוצה עם איבר מינימלי 
+\begin_inset Formula $P\left(n_{0}\right)$
+\end_inset
+
+, אזי הוכחת הנכונות של 
+\begin_inset Formula $P\left(n-1\right)$
+\end_inset
+
+ 
+\series bold
+\bar under
+גוררת את הנכונות
+\series default
+\bar default
+ של 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הרי 
+\begin_inset Formula $n$
+\end_inset
+
+ יכול להיות כל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ שהוא גדול מ-
+\begin_inset Formula $n_{0}$
+\end_inset
+
+ ולכן ברגע שהוכחנו את זה עבור 
+\begin_inset Formula $n-1$
+\end_inset
+
+ הוכחנו את זה גם עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ )זה כבר קשור להוכחת משפט האינדוקציה - שלא יתכנו איברים בין 
+\begin_inset Formula $n_{0}$
+\end_inset
+
+ ל-
+\begin_inset Formula $n$
+\end_inset
+
+ שעבורם 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+ לא תהיה תקפה(.
+ 
+\end_layout
+
+\begin_layout Note
+לפעמים הגרירה תהיה 
+\begin_inset Formula $P\left(n-1\right)\Rightarrow P\left(n\right)$
+\end_inset
+
+ ולפעמים: 
+\begin_inset Formula $P\left(n\right)\Rightarrow P\left(n+1\right)$
+\end_inset
+
+.
+ אבל כמובן שדרכים אלו שקולות וניתן להשתמש בשתיהן )פשוט במקום 
+\begin_inset Formula $n$
+\end_inset
+
+ נציב 
+\begin_inset Formula $n-1$
+\end_inset
+
+ או ההפך(.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,shorten
+ >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[rounded corners=1ex] (-1,2) rectangle (1,-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (n1) at (-0.0,0.5) {$P(n-1)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[rounded corners=1ex] (3,2) rectangle (5,-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (n1) at (4,0.5) {$P(n)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->,very thick] (1,0.5) -- (3,0.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+אינדוקציה שלמה
+\end_layout
+
+\begin_layout Theorem
+תהי 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+ טענה כלשהי לגבי 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ אזי הטענה נכונה אם מתקיימים שני התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+\shape italic
+בסיס האינדוקציה:
+\series default
+ הטענה 
+\begin_inset Formula $P\left(n_{0}\right)$
+\end_inset
+
+ נכונה.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\shape italic
+שלב האינדוקציה: 
+\series default
+\shape default
+לכל 
+\begin_inset Formula $m>n_{0}$
+\end_inset
+
+,
+\series bold
+\shape italic
+ 
+\series default
+\shape default
+כאשר
+\series bold
+\shape italic
+ 
+\begin_inset Formula $n_{0}\le m<n$
+\end_inset
+
+,
+\series default
+\shape default
+ נכונות הטענה
+\series bold
+\shape italic
+ 
+\begin_inset Formula $P\left(m\right)$
+\end_inset
+
+ 
+\shape default
+\emph on
+\bar under
+גוררת
+\shape italic
+\emph default
+\bar default
+ 
+\series default
+\shape default
+את הנכונות של 
+\begin_inset Formula $P\left(n\right)$
+\end_inset
+
+
+\shape italic
+\emph on
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+בניגוד לאינדוקציה בסיסית שבה הגרירה נובעת מ-
+\begin_inset Quotes qrd
+\end_inset
+
+אחד לפני
+\begin_inset Quotes qrd
+\end_inset
+
+, כאן אנחנו יכולים להשתמש בכל מספר טבעי 
+\begin_inset Formula $m$
+\end_inset
+
+ לגרירת הטענה
+\end_layout
+
+\begin_layout Subsection
+רעיון האינדוקציה
+\end_layout
+
+\begin_layout Standard
+את האינדוקציה אפשר להבין באמצעות השרטוט הנ
+\begin_inset Quotes qrd
+\end_inset
+
+ל:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,shorten
+ >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[-,dotted,Firebrick1] (3,-3) -- (3,-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[-,blue] (3,-2) -- (3,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->,dashed,OliveDrab4] (3,0) -- (3,1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[color=black, fill = orange, opacity=0.3] (3,0) circle (2pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[color=red, fill = orange, opacity=0.3] (3,-2) circle (2pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+filldraw[color=black] (3,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+filldraw[color=black] (3,-2) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [draw, fill=gray!10!white, opacity=0.9,rounded corners=1ex] (n) at (2,1)
+ {
+\backslash
+small $P(n)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [draw, fill=gray!10!white, opacity=0.9,rounded corners=1ex] (min) at
+ (2,-3) {
+\backslash
+small $P(n_0)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[-,dashed,opacity=0.3] (-1,0) -- (5,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[-,dashed,opacity=0.3] (-1,-2) -- (5,-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (n) -- (2.9,0.1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (min) -- (2.9,-2.1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [decorate,decoration={brace,amplitude=10pt,raise=4pt},yshift=0pt,rounded
+ corners=0ex] (3,-2) -- (3,0) node [black,align=center,midway,xshift=-2cm]
+ {
+\backslash
+tiny
+\backslash
+textit {האינדוקציה עובדת שעליו ערכים טווח}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

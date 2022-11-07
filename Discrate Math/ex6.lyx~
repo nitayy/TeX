@@ -1,0 +1,2032 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+\newfontfamily{\ls}{League Script}
+\newfontfamily{\am}{Amatic SC}
+
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern -3pt
+  \hbox to \textwidth{\hfill\vrule height 0.4pt width .4\textwidth}
+  \kern 2.6pt
+}}
+
+\usepackage[x11names,usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{adforn}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{automata}
+
+
+\renewcommand\qedsymbol{$\blacksquare$}
+\addtokomafont{disposition}{\rmfamily}
+\rhead{\textbf{תגבור דיסקרטית}}
+\lhead{\emph{תרגיל 6}}
+\cfoot{\adforn{27}\ls\textbf{\hspace{0.2cm}\thepage\hspace{0.2cm}}\adforn{61}}
+\end_preamble
+\options numbers=noenddot
+\use_default_options true
+\begin_modules
+theorems-ams-bytype
+theorems-sec-bytype
+theorems-ams-extended-bytype
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\bar under
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+fontsize{25}{40}
+\backslash
+selectfont{מתמטיקה דיסקרטית - תרגיל 6}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Playing Cards (gouache on paper).jpg
+	scale 130
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+חזרה על מושגים מפעם קודמת
+\end_layout
+
+\begin_layout Standard
+הנה כמה מושגים )שכבר נתקלנו בהם( שיעזרו לנו להבין את ההמשך:
+\begin_inset FormulaMacro
+\newcommand{\z}[2]{\left(#1,#2\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "def:זוג-סדור"
+
+\end_inset
+
+זוג סדור
+\series default
+ הוא זוג איברים 
+\begin_inset Formula $\left(a,b\right)$
+\end_inset
+
+ כאשר ישנה חשיבות לסדר.
+ )
+\begin_inset Formula $\left(a,b\right)\neq\left(b,a\right)$
+\end_inset
+
+(.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+
+\series bold
+מכפלה קרטזית
+\series default
+ עבור שתי קבוצות 
+\begin_inset Formula $A,B$
+\end_inset
+
+ היא אוסף כל הזוגות הסדורים 
+\begin_inset Formula $\left(a,b\right)$
+\end_inset
+
+ )הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:זוג-סדור"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+( כך ש-
+\begin_inset Formula $a\in A,b\in B$
+\end_inset
+
+.
+ מסמנים אותה: 
+\begin_inset Formula $\boldsymbol{A\times B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "def:יחס-על-הקבוצה"
+
+\end_inset
+
+יחס על הקבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+
+\series default
+ מסומן ב-
+\begin_inset Formula $R$
+\end_inset
+
+ ומוגדר להיות 
+\begin_inset Formula $\boldsymbol{R\subseteq A\times B}$
+\end_inset
+
+ - כלומר מדובר באוסף של זוגות סדורים מהקבוצה 
+\begin_inset Formula $A\times B$
+\end_inset
+
+ )המכפלה הקרטזית(.
+ מדובר בקבוצה חלקית לקבוצה 
+\begin_inset Formula $A\times B$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+יחס סדר חלקי ומלא
+\end_layout
+
+\begin_layout Standard
+נסמן: 
+\begin_inset Formula $S=\left\{ \clubsuit,\spadesuit,\diamondsuit,\heartsuit\right\} $
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\s}{\spadesuit}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\c}{\clubsuit}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\h}{\heartsuit}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\d}{\diamondsuit}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+יחס סדר חלקי
+\end_layout
+
+\begin_layout Definition
+יחס 
+\begin_inset Formula $R$
+\end_inset
+
+ על הקבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ יקרא 
+\series bold
+\bar under
+יחס סדר חלקי
+\series default
+\bar default
+ אם 
+\begin_inset Formula $R$
+\end_inset
+
+ הוא:
+\end_layout
+
+\begin_layout Enumerate
+רפלקסיבי.
+\end_layout
+
+\begin_layout Enumerate
+אנטי-סימטרי.
+\end_layout
+
+\begin_layout Enumerate
+טרנזיטיבי.
+\end_layout
+
+\begin_layout Subsection
+קבוצה סדורה חלקית
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:קסח"
+
+\end_inset
+
+לזוג הסדור 
+\begin_inset Formula $\left(A,R\right)$
+\end_inset
+
+ נקרא 
+\bar under
+קבוצה סדורה חלקית
+\bar default
+ )קס
+\begin_inset Quotes qrd
+\end_inset
+
+ח(.
+\end_layout
+
+\begin_layout Standard
+לרוב נסמן זאת כך: 
+\begin_inset Formula $\left(A,\le\right)$
+\end_inset
+
+ - שימו לב כי כאן הסימון 
+\begin_inset Formula $\le$
+\end_inset
+
+ 
+\series bold
+אינו
+\series default
+ מסמל קטן-שווה, אלא ש-
+\begin_inset Formula $A$
+\end_inset
+
+ היא קס
+\begin_inset Quotes qrd
+\end_inset
+
+ח.
+\end_layout
+
+\begin_layout Example
+ניקח את הקבוצה 
+\begin_inset Formula $A=\left\{ 1,2,3\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $R=\left\{ \left(1,1\right),\left(2,2\right),\left(3,3\right),\left(1,2\right)\right\} $
+\end_inset
+
+ אזי היחס הנ
+\begin_inset Quotes qrd
+\end_inset
+
+ל הוא יחס סדר חלקי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+הנה עוד דוגמה ליחס סדר חלקי:
+\end_layout
+
+\begin_layout Example
+הפעם 
+\begin_inset Formula $A=\left\{ 1,2\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $R=\left\{ \left(1,1\right),\left(2,2\right),\left(1,2\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=PaleGreen1!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,node distance=2
+cm,shorten >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (1) {$1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (2) [right of=1] {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path[->](1) edge [loop above] () (2) edge [loop above] () (1) edge(2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+יחס סדר מלא
+\end_layout
+
+\begin_layout Definition
+נתונה לנו קבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ ויחס 
+\begin_inset Formula $R$
+\end_inset
+
+ עליה )הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:יחס-על-הקבוצה"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(.
+ אם 
+\series bold
+לכל 
+\series default
+
+\begin_inset Formula $a,b\in A$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $aRb$
+\end_inset
+
+ או 
+\begin_inset Formula $bRa$
+\end_inset
+
+ )
+\begin_inset Formula $\left(a,b\right)\in R$
+\end_inset
+
+ או 
+\begin_inset Formula $\left(b,a\right)\in R$
+\end_inset
+
+( אזי היחס 
+\begin_inset Formula $R$
+\end_inset
+
+ נקרא 
+\series bold
+\bar under
+יחס סדר מלא
+\series default
+\bar default
+ )
+\emph on
+או:יחס סדר לינארי
+\emph default
+( ומסומן ע
+\begin_inset Quotes qrd
+\end_inset
+
+י: 
+\begin_inset Formula $\boldsymbol{\left(A,R\right)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Definition
+או: 
+\begin_inset Formula $\forall a\forall b\left(aRb\vee bRa\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+לקבוצה 
+\begin_inset Formula $\left(A,R\right)$
+\end_inset
+
+ נקרא 
+\bar under
+קבוצה סדורה לינארית
+\bar default
+.
+\end_layout
+
+\begin_layout Example
+נגדיר את היחס 
+\begin_inset Formula $R_{S}$
+\end_inset
+
+ על 
+\begin_inset Formula $S\times S$
+\end_inset
+
+ באופן הבא: 
+\begin_inset Formula 
+\[
+R_{S}=\left\{ \left(\c,\s\right),\left(\d,\h\right),\left(\c,\h\right),\left(\c,\d\right),\left(\h,\s\right),\left(\c,\h\right)\right\} 
+\]
+
+\end_inset
+
+ הוא יחס סדר מלא אך אינו חלקי.
+\end_layout
+
+\begin_layout Example
+אחת הסיבות לכך שהוא אינו חלקי היא שהוא אינו רפלקסיבי )וזה כבר מספיק בשביל
+ לפסול את זה...(.
+ אבל הוא כן יחס סדר חלקי כי 
+\series bold
+לכל
+\series default
+ 
+\begin_inset Formula $a,b\in S$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $\left(a,b\right)\in R_{S}$
+\end_inset
+
+ או 
+\begin_inset Formula $\left(b,a\right)\in R_{S_{1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+כעת, אם נוציא מ-
+\begin_inset Formula $R_{S}$
+\end_inset
+
+ את אחד הזוגות, למשל, את 
+\begin_inset Formula $\left(\h,\s\right)$
+\end_inset
+
+ אזי היחס לא יהיה יחס סדר מלא כי עבור שני האיברים 
+\begin_inset Formula $\s,\h$
+\end_inset
+
+ אין שום זוג סדור שמכיל את 
+\bar under
+שניהם
+\bar default
+.
+\end_layout
+
+\begin_layout Example
+)זה יהיה נכון לכל זוג שנוציא במקום מה שהוצאנו(.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+דוגמאות לסדרים מכל ארבעת האפשרויות
+\end_layout
+
+\begin_layout Condition
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "cond:יחס-סדר-מלא:"
+
+\end_inset
+
+יחס סדר מלא: 
+\series default
+היחס הוא יחס 
+\bar under
+רפלקסיבי
+\bar default
+, 
+\bar under
+אנטי-סימטרי
+\bar default
+ 
+\bar under
+וטרנזיטיבי
+\bar default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Condition
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "cond:יחס-סדר-חלקי:"
+
+\end_inset
+
+יחס סדר חלקי: 
+\series default
+לכל 
+\begin_inset Formula $a,b\in A$
+\end_inset
+
+: 
+\begin_inset Formula $\left(a,b\right)\in R$
+\end_inset
+
+ או 
+\begin_inset Formula $\left(b,a\right)\in R$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+יחס סדר מלא וחלקי
+\end_layout
+
+\begin_layout Standard
+ניתן למנות שני יחסים די טריוויאלים: 
+\begin_inset Formula $"\le"$
+\end_inset
+
+ - קטן שווה ו-
+\begin_inset Formula $"\ge"$
+\end_inset
+
+ - גדול שווה; עבור הקבוצה 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+שני התנאים )
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond:יחס-סדר-מלא:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond:יחס-סדר-חלקי:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+( מתקיימים.
+\end_layout
+
+\begin_layout Subsubsection
+יחס סדר מלא 
+\emph on
+שאינו
+\emph default
+ חלקי
+\end_layout
+
+\begin_layout Standard
+ניתן לקחת את יחס השיוויון 
+\begin_inset Formula $I_{A}$
+\end_inset
+
+: 
+\begin_inset Formula $R=\left\{ \left(a,a\right)\Big|a\in A\right\} $
+\end_inset
+
+ )לכל קבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ שהיא...(.
+\end_layout
+
+\begin_layout Standard
+תנאי 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond:יחס-סדר-מלא:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ מתקיים, לעומת זאת תנאי 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond:יחס-סדר-חלקי:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ אינו מתקיים )כי למשל 
+\begin_inset Formula $\left(2,3\right)\notin I$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Subsubsection
+יחס סדר חלקי 
+\emph on
+שאינו
+\emph default
+ מלא
+\end_layout
+
+\begin_layout Standard
+היחס קטן ממש 
+\begin_inset Formula $"<"$
+\end_inset
+
+ או - גדול ממש 
+\begin_inset Formula $">"$
+\end_inset
+
+ עבור 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אינו מלא כי הוא אינו רפלקסיבי, והוא יחס סדר חלקי כי לכל שני מספרים 
+\begin_inset Formula $a,b\in\mathbb{N}$
+\end_inset
+
+ 
+\begin_inset Formula $a<b$
+\end_inset
+
+ או 
+\begin_inset Formula $b<a$
+\end_inset
+
+ וכנ
+\begin_inset Quotes qrd
+\end_inset
+
+ל לגבי 
+\begin_inset Formula $">"$
+\end_inset
+
+ )תנאי 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cond:יחס-סדר-חלקי:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Subsubsection
+יחס סדר 
+\emph on
+שאינו
+\emph default
+ חלקי 
+\emph on
+ואינו
+\emph default
+ מלא
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=PaleGreen1!30]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,node distance=2
+cm,shorten >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (1) {$1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (2) [right of=1] {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (3) [right of=2] {$3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path[->](1) edge [loop above] () (1) edge (2) (1) edge [bend right] (3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+היחס אינו מלא כי הוא אינו טרנזיטיבי, והוא אינו חלקי כי 
+\begin_inset Formula $\left(2,3\right)$
+\end_inset
+
+ לא נמצא בו.
+\end_layout
+
+\begin_layout Section
+איבר מינימלי ואיבר מקסימלי
+\end_layout
+
+\begin_layout Subsection
+איבר מינימלי
+\end_layout
+
+\begin_layout Definition
+נתון לנו יחס 
+\begin_inset Formula $R$
+\end_inset
+
+ על הקבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ הוא 
+\series bold
+\bar under
+איבר מינימלי
+\series default
+\bar default
+ אם הוא מקיים את התכונה הבאה:
+\end_layout
+
+\begin_layout Definition
+
+\series bold
+לא קיים 
+\begin_inset Formula $b\in A$
+\end_inset
+
+
+\series default
+, מלבד 
+\begin_inset Formula $a$
+\end_inset
+
+ עצמו, כך ש-
+\begin_inset Formula $\left(b,a\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\forall a\neg\exists b\left(\left(b,a\right)\in R\vee b=a\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+כלומר, אם ישנו זוג סדור ש-
+\begin_inset Formula $a$
+\end_inset
+
+ נמצא בו, אזי כדי שהוא יהיה מינימלי הוא חייב להיות השמאלי )והוא יכול להופיע
+ יותר מפעם אחת(.
+\end_layout
+
+\begin_layout Subsection
+איבר מקסימלי
+\end_layout
+
+\begin_layout Definition
+נתון לנו יחס 
+\begin_inset Formula $R$
+\end_inset
+
+ על הקבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ הוא 
+\series bold
+\bar under
+איבר מקסימלי
+\series default
+\bar default
+ אם הוא מקיים את התכונה הבאה:
+\end_layout
+
+\begin_layout Definition
+
+\series bold
+לא קיים 
+\begin_inset Formula $a\in A$
+\end_inset
+
+
+\series default
+, מלבד 
+\begin_inset Formula $b$
+\end_inset
+
+ עצמו, כך ש-
+\begin_inset Formula $\left(b,a\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\forall b\neg\exists a\left(\left(b,a\right)\in R\vee b=a\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+כלומר, אם ישנו זוג סדור ש-
+\begin_inset Formula $b$
+\end_inset
+
+ נמצא בו, אזי כדי שהוא יהיה מקסימלי הוא חייב להיות הימני )והוא יכול להופיע
+ יותר מפעם אחת(.
+\end_layout
+
+\begin_layout Note
+בכל יחס, אם ישנו איבר מינימלי/מקסימלי אזי הוא יכול להופיע יותר מפעם אחת
+ אבל 
+\series bold
+רק
+\series default
+ בצד שמאל/ימין )בהתאמה(.
+\end_layout
+
+\begin_deeper
+\begin_layout Note
+בכל יחס יכול להיות יותר מאיבר מינימלי/מקסימלי אחד.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+דוגמאות
+\end_layout
+
+\begin_layout Example
+נסתכל על היחס 
+\begin_inset Formula $R=\left\{ \left(1,2\right)\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Example
+ביחס הזה ישנו איבר מינימלי אחד - 
+\begin_inset Formula $"1"$
+\end_inset
+
+, ואיבר מקסימלי אחד - 
+\begin_inset Formula $"2"$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+ניקח את כל קלפי הלב מחפיסת קפלים סטנדרטית: 
+\begin_inset Formula $A=\left\{ 1,2,\ldots,13,\h,\s,\d,\c\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $S\subseteq A\times A$
+\end_inset
+
+ , לכן יהיה לנו יחס שנראה כך: 
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $S=\left\{ \left(1,\h\right),\left(2,\h\right),\ldots,\left(13,\h\right)\right\} $
+\end_inset
+
+, אזי ישנם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+13
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+איברים מינימליים: 
+\begin_inset Formula $1,2,\ldots,13$
+\end_inset
+
+.
+ ואיבר מקסימלי אחד -
+\begin_inset Formula $\h$
+\end_inset
+
+.
+ הסבר: יש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+13
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+איברים מינימליים, כי אם ניקח למשל את 
+\begin_inset Formula $"2"$
+\end_inset
+
+, אזי נראה שלא קיים שום איבר ב-
+\begin_inset Formula $S$
+\end_inset
+
+ מהצורה: 
+\begin_inset Formula $\left(*,2\right)$
+\end_inset
+
+ )כאשר 
+\begin_inset Formula $*$
+\end_inset
+
+ הוא איבר כלשהו - מספר או צורה(, וזה נכון לגבי כל אחד מ-
+\numeric on
+13
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+המספרים.
+\end_layout
+
+\begin_layout Example
+לגבי איבר מקסימלי - כנ
+\begin_inset Quotes qrd
+\end_inset
+
+ל, ה-
+\begin_inset Formula $\h$
+\end_inset
+
+ תמיד מופיע בצד השמאלי ולא קיים ב-
+\begin_inset Formula $S$
+\end_inset
+
+ איבר מהצורה 
+\begin_inset Formula $\left(\h,*\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:איבר-מינימלי"
+
+\end_inset
+
+תהי 
+\begin_inset Formula $\left(B,\le\right)$
+\end_inset
+
+ קס
+\begin_inset Quotes qrd
+\end_inset
+
+ח )הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:קסח"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+( ותהיה קבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ תת-קבוצה של 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+איבר 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ יקרא 
+\bar under
+מינימלי ב-
+\begin_inset Formula $A$
+\end_inset
+
+
+\bar default
+, אם 
+\series bold
+לא
+\series default
+ 
+\series bold
+קיים
+\series default
+ 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $a\neq b$
+\end_inset
+
+ וגם 
+\begin_inset Formula $b\le a$
+\end_inset
+
+ )כלומר 
+\begin_inset Formula $\left(b,a\right)$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+
+\series bold
+קבוצה סדורה היטב )קס
+\begin_inset Quotes qrd
+\end_inset
+
+ה( 
+\series default
+היא קבוצה סדורה חלקית 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:קסח"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset Formula $\left(B,\le\right)$
+\end_inset
+
+ שבה לכל תת-קבוצה 
+\bar under
+לא ריקה
+\bar default
+ 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+ יש איבר מינימלי )הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:איבר-מינימלי"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+( 
+\series bold
+\bar under
+אחד ויחיד
+\series default
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+
+\series bold
+תנאי המינימליות: 
+\series default
+נאמר שקס
+\begin_inset Quotes qrd
+\end_inset
+
+ח 
+\begin_inset Formula $\left(B,\le\right)$
+\end_inset
+
+ )הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:קסח"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+( מקיימת את 
+\bar under
+תנאי המינימליות
+\bar default
+ אם בכל תת-קבוצה 
+\bar under
+לא ריקה
+\bar default
+ 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+ יש לפחות איבר מינימלי אחד.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+דיאגרמת הסה לקבוצה סדורה חלקית )קס
+\begin_inset Quotes qrd
+\end_inset
+
+ח(
+\end_layout
+
+\begin_layout Standard
+נניח ונתונה לנו 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:קסח"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset Formula $\left(A,\le\right)$
+\end_inset
+
+ ונניח כי היא מקיימת את כל שלושת התנאים )רפלקסיביות, אנטי-סימטריות וטרנזיטיביות(
+ אזי ניתן להציג אותה גם באמצעות גרף - 
+\series bold
+\bar under
+דיאגרמת הסה
+\series default
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+כל קודקוד יסמן איבר בקבוצה, ונמתח קו לפי מאותו איבר להבא אחריו:
+\end_layout
+
+\begin_layout Example
+נניח כי 
+\begin_inset Formula $R_{1}=\left\{ \left(1,2\right),\left(1,1\right),\left(2,2\right)\right\} $
+\end_inset
+
+עבור 
+\begin_inset Formula $A=\left\{ 1,2\right\} $
+\end_inset
+
+ אזי הדיאגרמה תיראה כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=PaleGreen1!30]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,node distance=2
+cm,shorten >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (1) {$1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (2) [above of=1] {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path[->] (1) edge (2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+עבור: 
+\begin_inset Formula $B=\left\{ 1,2,3,4,5\right\} $
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{2}=\left\{ \z 11,\z 22,\z 33,\z 44,\z 55,\z 12,\z 24,\z 13,\z 34,\z 14\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+הדיאגרמה תיראה כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=PaleGreen1!30]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,node distance=2
+cm,shorten >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (2) {$2$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (4) [above right of=2] {$4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (1) [below right of=2] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (3) [below right of=4] {$3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (5) [right of=3] {$5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path[->] (1) edge (2) (2) edge (4)(1) edge (3) (3) edge (4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+את הצלע 
+\begin_inset Formula $\left(1,4\right)$
+\end_inset
+
+ אין צורך לרשום כי זה הרעיון בדיאגרמה:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+אם אני יכול להגיע מקודקוד 
+\begin_inset Formula $a$
+\end_inset
+
+ לקודקוד 
+\begin_inset Formula $b$
+\end_inset
+
+ )גם אם זה דרך קודקודים אחרים(, אזי הזוג 
+\begin_inset Formula $\z ab$
+\end_inset
+
+ נמצא ביחס.
+\end_layout
+
+\begin_layout Standard
+הסיבה שקודקוד 
+\begin_inset Formula $"5"$
+\end_inset
+
+ לא מחובר אל השאר זה בגלל שאין שום דרך להגיע אליו מלבד הוא עצמו 
+\begin_inset Formula $\left(5,5\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+נניח כי נתונה לנו הקבוצה 
+\begin_inset Formula $A=\left\{ 1,2,3,4,6,12\right\} $
+\end_inset
+
+ והיחס 
+\begin_inset Quotes qld
+\end_inset
+
+מחלק את
+\begin_inset Quotes qrd
+\end_inset
+
+, אזי 
+\begin_inset Formula $\left(A,"\mid"\right)$
+\end_inset
+
+ היא 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:קסח"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ דיאגרמת הסה תיראה כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=PaleGreen1!30]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,node distance=2
+cm,shorten >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (3) {$3$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (6) [above right of=3] {$6$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (1) [below right of=3] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (2) [below right of=6] {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (12) [above right of=6] {$12$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[state] (4) [below right of=12] {$4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path[->] (1) edge (3) (3) edge (6)(1) edge (2) (2) edge (6)(6) edge(12)(4)
+ edge (12) (2) edge (4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->,blue,line width=2] (5.5,-1) -- (5.5,2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ומכך ניתן להבין שזוגות כמו: 
+\begin_inset Formula $,\left(1,12\right),\z 2{12},\z 3{12}$
+\end_inset
+
+ וכו'...
+ נמצאות ביחס כי ניתן להגיע מקודקוד אחד לשני )למשל: מ-
+\begin_inset Formula $2$
+\end_inset
+
+ ל-
+\begin_inset Formula $12$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+נשים לב כי למשל 
+\begin_inset Formula $\left(3,4\right)$
+\end_inset
+
+ אינו ביחס הנתון, ואכן, אין אפשרות להגיע בדיאגרמה מ-
+\begin_inset Formula $3$
+\end_inset
+
+ ל-
+\begin_inset Formula $4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בנוסף, אפשר גם לומר שהרעיון הוא שבדיאגרמה אפשר 
+\series bold
+רק לעלות למעלה
+\series default
+ )כמו שהחץ הכחול 
+\color blue
+
+\begin_inset Formula $\uparrow$
+\end_inset
+
+
+\color inherit
+ מראה(...
+\end_layout
+
+\begin_layout Standard
+נשים לב לשני מקרים מעניינים:
+\end_layout
+
+\begin_layout Enumerate
+המקרה של 
+\begin_inset Formula $"1"$
+\end_inset
+
+ - נשים לב שהוא יהיה תמיד בתחתית כי לכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+: 
+\begin_inset Formula $1\mid n$
+\end_inset
+
+, כי 
+\begin_inset Formula $1\cdot n=n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+לעומת זאת, 
+\begin_inset Formula $"0"$
+\end_inset
+
+ תמיד יהיה הכי למעלה )אם הוא כלול בקבוצה(, כי לכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+: 
+\begin_inset Formula $n\mid0$
+\end_inset
+
+, כי 
+\begin_inset Formula $n\cdot0=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+ההפך בשני המקרים אינו נכון: 
+\begin_inset Formula $n\nmid1$
+\end_inset
+
+ וגם 
+\begin_inset Formula $0\nmid n$
+\end_inset
+
+ לכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Huge 
+\backslash
+adforn{21}
+\backslash
+adforn{11}
+\backslash
+adforn{49}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

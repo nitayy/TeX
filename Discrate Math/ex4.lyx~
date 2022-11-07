@@ -1,0 +1,4572 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+\newfontfamily{\ls}{League Script}
+\newfontfamily{\am}{Amatic SC}
+
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern -3pt
+  \hbox to \textwidth{\hfill\vrule height 0.4pt width .4\textwidth}
+  \kern 2.6pt
+}}
+
+\usepackage[x11names,usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{adforn}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+\addtokomafont{disposition}{\rmfamily}
+\rhead{\textbf{תגבור דיסקרטית}}
+\lhead{\emph{תרגיל 4}}
+\cfoot{\adforn{27}\ls\textbf{\hspace{0.2cm}\thepage\hspace{0.2cm}}\adforn{61}}
+\end_preamble
+\options numbers=noenddot
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-bytype
+theorems-ams-extended-chap-bytype
+theorems-ams-extended-bytype
+theorems-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+Provides xcolor 1
+\end_local_layout
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Alice-Dodo.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+שאלות דומות לתרגיל
+\family sans
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Section
+לוגיקה ו-
+\begin_inset Formula $DNF$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:DNF"
+
+\end_inset
+
+נניח ונתונים לנו 
+\begin_inset Formula $n$
+\end_inset
+
+ משתנים: 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+, אזי:
+\end_layout
+
+\begin_layout Definition
+
+\bar under
+פסוק 
+\begin_inset Formula $DNF$
+\end_inset
+
+
+\bar default
+ הוא פסוק מהצורה הבאה:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+A_{1}\vee A_{2}\vee\cdots\vee A_{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+כאשר 
+\begin_inset Formula $m\in\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+ולכל 
+\begin_inset Formula $i$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+A_{i}=\left(P_{1}\wedge P_{2}\wedge\cdots\wedge P_{k}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+כאשר כל 
+\begin_inset Formula $P_{j}$
+\end_inset
+
+ הוא משתנה 
+\begin_inset Formula $x_{k}$
+\end_inset
+
+ כלשהו או שלילתו 
+\begin_inset Formula $\left(\neg x_{k}\text{ או }\overline{x}_{k}\right)$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Remark
+
+\series bold
+\color red
+לא ייתכן כי באותה פסוקית 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ אותו משתנה יופיע פעמיים!!
+\end_layout
+
+\begin_layout Subsection
+דוגמאות
+\end_layout
+
+\begin_layout Standard
+נניח כי נתונים לנו: 
+\begin_inset Formula $P,Q,R,W$
+\end_inset
+
+, אזי הנה פסוקי 
+\begin_inset Formula $DNF$
+\end_inset
+
+ לדוגמה:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(P\wedge Q\right)\vee\left(W\wedge\overline{Q}\right)\vee\left(\overline{P}\wedge R\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(P\wedge\overline{Q}\wedge\overline{W}\wedge\overline{R}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שימו 
+\begin_inset Formula $\heartsuit$
+\end_inset
+
+ כי בשום פסוקית אין משתנה המופיע פעמיים...
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם לבניית פסוק 
+\begin_inset Formula $DNF$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בניית פסוק 
+\begin_inset Formula $DNF$
+\end_inset
+
+ מפסוק אחר כלשהו היא יחסית פשוטה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+בניית פסוק 
+\begin_inset Formula $DNF$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:בניית-פסוק-DNF"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\emph on
+\color gray
+קלט: פסוק 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ כלשהו.
+\end_layout
+
+\begin_layout Plain Layout
+
+\emph on
+\color gray
+פלט: הפסוק 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ בצורת 
+\begin_inset Formula $DNF$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+בנו טבלת אמת ל-
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+לקחו את כל ערכי האמת בטבלה )הערכים שעבורם בטבלה מתקבל הערך 
+\begin_inset Formula $T$
+\end_inset
+
+ [אמת](.
+\end_layout
+
+\begin_layout Enumerate
+כעת, עבור כל אחד מהערכים הללו:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+נחבר אותם בקשר 
+\begin_inset Quotes qld
+\end_inset
+
+וגם
+\begin_inset Quotes qrd
+\end_inset
+
+ 
+\begin_inset Formula $\left(\wedge\right)$
+\end_inset
+
+ - אם מופיע הערך 
+\begin_inset Quotes qld
+\end_inset
+
+אמת
+\begin_inset Quotes qrd
+\end_inset
+
+ במשתנה נחבר אותו כמו שהוא ואם מופיע הערך 
+\begin_inset Quotes qld
+\end_inset
+
+שקר
+\begin_inset Quotes qrd
+\end_inset
+
+ נחבר את שלילתו.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+את כל הפסוקיות נחבר בקשר 
+\begin_inset Quotes qld
+\end_inset
+
+או
+\begin_inset Quotes qrd
+\end_inset
+
+ 
+\begin_inset Formula $\left(\vee\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+נסתכל על הפסוק: 
+\begin_inset Formula $\left(P\oplus Q\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Example
+נבנה לו טבלת אמת:
+\end_layout
+
+\begin_layout Example
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P\oplus Q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+adforn{42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+adforn{42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+וכעת ניקח את שתי השורות המסומנות בכחול )האמצעיות( וע
+\begin_inset Quotes qrd
+\end_inset
+
+פ אלגוריתם 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "alg:בניית-פסוק-DNF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ נבנה פסוקית 
+\begin_inset Formula $DNF$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\left(P\wedge\overline{Q}\right)\vee\left(\overline{P}\wedge Q\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+נסתכל למשל על הפסוקית השמאלית: היא מייצגת את השורה השנייה.
+\end_layout
+
+\begin_layout Example
+ההשמה בשורה השנייה היא: 
+\begin_inset Formula $P=T$
+\end_inset
+
+ ו-
+\begin_inset Formula $Q=F$
+\end_inset
+
+ ולכן אנחנו רושמים: 
+\begin_inset Formula $\left(P\wedge\overline{Q}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+
+\emph on
+\bar under
+הסבר:
+\end_layout
+
+\begin_layout Example
+
+\emph on
+הרעיון שעומר מאחורי פסוקית 
+\begin_inset Formula $DNF$
+\end_inset
+
+ כזאת היא שאנחנו צריכים השמה אחת שמספקת את הפסוק המקורי )למשל במקרה שלנו:
+ 
+\begin_inset Formula $P=F,Q=T$
+\end_inset
+
+( והיא בהכרח תספק את פסוק ה-
+\begin_inset Formula $DNF$
+\end_inset
+
+ שבנינו בגלל קשר ה-
+\begin_inset Quotes qrd
+\end_inset
+
+או
+\begin_inset Quotes qrd
+\end_inset
+
+ )והסיבה שיש 
+\begin_inset Quotes qld
+\end_inset
+
+וגם
+\begin_inset Quotes qrd
+\end_inset
+
+ היא כדי לוודא שזאת תהיה אותה השמה(.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $CNF$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+פסוקית 
+\begin_inset Formula $CNF$
+\end_inset
+
+ היא כמו פסוקית 
+\begin_inset Formula $DNF$
+\end_inset
+
+ מבחינת הצורה רק המבנה הוא הפוך:
+\end_layout
+
+\begin_layout Standard
+את כל הקשרים מהצורה 
+\begin_inset Formula $\wedge$
+\end_inset
+
+ נמיר ל-
+\begin_inset Formula $\vee$
+\end_inset
+
+ וההפך.
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם לבניית 
+\begin_inset Formula $CNF$
+\end_inset
+
+ מפסוק כלשהו
+\end_layout
+
+\begin_layout Standard
+אנחנו עושים בדיוק את הדבר כמו ב-
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "alg:בניית-פסוק-DNF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ רק שהפעם אנחנו לוקחים את ערכי השקר של הטבלת אמת והיכן שהופיע משתנה נשים
+ את שלילתו והיכן שהופיעה שלילת משתנה - נוסיף אותו ללא השלילה.
+\end_layout
+
+\begin_layout Standard
+למשל.
+\end_layout
+
+\begin_layout Example
+נמיר את הפסוק 
+\begin_inset Formula $P\to Q$
+\end_inset
+
+ ל-
+\begin_inset Formula $CNF$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Example
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<column alignment="decimal" decimal_point="." valignment="top">
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P\to Q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+adforn{42}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="decimal" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="decimal" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+ולכן פסוק ה-
+\begin_inset Formula $CNF$
+\end_inset
+
+ שנקבל הוא: 
+\begin_inset Formula $\left(\neg P\vee Q\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+הוכחות וקבוצות
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Who's The Fairest of them All.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+הוכחות
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:proof1"
+
+\end_inset
+
+כאשר יש לנו להוכיח הוכחה מהצורה: 
+\begin_inset Formula $A\Rightarrow B$
+\end_inset
+
+, כלומר: 
+\emph on
+אם
+\emph default
+ 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ 
+\emph on
+אז
+\emph default
+ 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+, אזי אנחנו מניחים את 
+\begin_inset Formula $A$
+\end_inset
+
+ וצריכים להראות ש-
+\begin_inset Formula $B$
+\end_inset
+
+ נכון.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+נוכיח כי אם 
+\series bold
+חתולים הם חיות
+\series default
+ אז 
+\series bold
+לוקחים אותם לחיסונים אצל הווטרינר.
+\end_layout
+
+\begin_layout Proof
+נתון לנו כי חתולים הם חיות.
+ אנחנו יודעים כי מחסנים חיות אצל הווטרינר, ומכך ניתן להסיק שמחסנים אותם
+ אצל הווטרינר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+כאשר יש לנו הוכחה מהצורה 
+\begin_inset Formula $A\iff B$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ 
+\emph on
+אםם 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+
+\emph default
+, אזי אנחנו עושים בדיוק את מה שעשינו בהגדרה 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "def:proof1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ רק באופן כפול: 
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $A\Rightarrow B$
+\end_inset
+
+ וגם 
+\begin_inset Formula $B\Rightarrow A$
+\end_inset
+
+.
+ כלומר כל פעם מניחים שצד אחד הוא נכון וצריך להוכיח את הצד השני.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:היחס-מחלק-את"
+
+\end_inset
+
+היחס 
+\series bold
+\emph on
+מחלק את
+\series default
+\emph default
+ מסומן ע
+\begin_inset Quotes qrd
+\end_inset
+
+י 
+\begin_inset Formula $\boxed{a\mid b}$
+\end_inset
+
+ )כאשר 
+\begin_inset Formula $a,b\in\mathbb{Z}$
+\end_inset
+
+( ופירושו שקיים 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $a\cdot k=b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+למשל: 
+\begin_inset Formula $2\mid16$
+\end_inset
+
+ כי 
+\begin_inset Formula $2\cdot\boldsymbol{8}=16$
+\end_inset
+
+, או 
+\begin_inset Formula $3\mid12$
+\end_inset
+
+ כי 
+\begin_inset Formula $3\cdot\boldsymbol{4}=12$
+\end_inset
+
+.
+ לעומת זאת 
+\begin_inset Formula $2\nmid5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+אם 
+\begin_inset Formula $a\mid b\wedge b\mid c$
+\end_inset
+
+ אזי 
+\begin_inset Formula $a\mid c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+ניתן לראות כי מדובר בהוכחה שצריכה להיות ע
+\begin_inset Quotes qrd
+\end_inset
+
+פ הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:proof1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לכן, נתחיל מכך שנתון לנו כי 
+\begin_inset Formula $a\mid b\wedge b\mid c$
+\end_inset
+
+, ולכן, ע
+\begin_inset Quotes qrd
+\end_inset
+
+פ הגדרת 
+\begin_inset Quotes qld
+\end_inset
+
+מחלק את
+\begin_inset Quotes qrd
+\end_inset
+
+ )הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:היחס-מחלק-את"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(, קיימים 
+\begin_inset Formula $p,q\in\mathbb{N}$
+\end_inset
+
+ כך ש:
+\begin_inset Formula 
+\[
+\begin{aligned}a\cdot\boldsymbol{p}=b\\
+b\cdot\boldsymbol{q}=c
+\end{aligned}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+כעת, זה מה שנתון לנו, ומתוך זה צריך להגיע למסקנה.
+\end_layout
+
+\begin_layout Proof
+פשוט נציב את המשוואה העליונה בתחתונה )את ה-
+\begin_inset Formula $b$
+\end_inset
+
+( ונקבל: 
+\begin_inset Formula $a\cdot\boldsymbol{p\cdot q}=c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+כעת היות ו-
+\begin_inset Formula $p,q\in\mathbb{N}$
+\end_inset
+
+ אזי בוודאי גם 
+\begin_inset Formula $p\cdot q\in\mathbb{N}$
+\end_inset
+
+, ולכן ע
+\begin_inset Quotes qrd
+\end_inset
+
+פ הגדרה 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "def:היחס-מחלק-את"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: 
+\begin_inset Formula $a\mid c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\series bold
+מש
+\begin_inset Quotes qrd
+\end_inset
+
+ל.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+הוכחות עם כמתים
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:הוכחות-עם-כמתים"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר נתונים לנו משפטים כמו: 
+\begin_inset Quotes qld
+\end_inset
+
+קיים...
+\begin_inset Quotes qrd
+\end_inset
+
+ או 
+\begin_inset Quotes qld
+\end_inset
+
+לכל....
+\begin_inset Quotes qrd
+\end_inset
+
+ אזי אפשר להוכיח את הדברים בצורה הבאה:
+\end_layout
+
+\begin_layout Subsubsection
+הוכחה עם הכמת 
+\begin_inset Quotes qld
+\end_inset
+
+לכל
+\begin_inset Quotes qrd
+\end_inset
+
+ 
+\begin_inset Formula $\forall$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:הוכחה-עם-הכמת-לכל"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר רוצים להוכיח שמשפט עם הכמת 
+\begin_inset Formula $\forall$
+\end_inset
+
+ )לכל( אינו נכון מספיק למצוא דוגמה נגדית למשפט שבא אחרי )במקרה ומדובר במשפט
+ פשוט ולא מורכב(.
+\end_layout
+
+\begin_layout Example*
+
+\series bold
+\bar under
+כל
+\bar default
+ המספרים הראשוניים הם אי-זוגיים
+\series default
+.
+ מספיק שנמצא ראשוני אחד שהוא זוגי ואז הטענה תהיה לא נכונה כי החלנו אותה
+ על כל המספרים הראשוניים.
+ ואכן - 
+\begin_inset Formula $2$
+\end_inset
+
+ - הוא ראשוני ואינו אי-זוגי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לעומת זאת - אם רוצים להוכיח כי הטענה נכונה - כאן כבר צריכים ממש 
+\begin_inset Quotes qld
+\end_inset
+
+הוכחה
+\begin_inset Quotes qrd
+\end_inset
+
+ ואי אפשר להוכיח על ידי מציאות דוגמה...
+ )מהסיבה שאנחנו מדברים על 
+\series bold
+כל
+\series default
+ האיברים ולכן לא מספיק להוכיח רק עבור אחד, אלא צריך על כולם ולפעמים ה
+\begin_inset Quotes qrd
+\end_inset
+
+כולם
+\begin_inset Quotes qrd
+\end_inset
+
+ הזה זה אינסוף איברים ...( 
+\end_layout
+
+\begin_layout Subsubsection
+הוכחה עם הכמת 
+\begin_inset Quotes qld
+\end_inset
+
+קיים
+\begin_inset Quotes qrd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בדיוק כמו 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "subsec:הוכחה-עם-הכמת-לכל"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ רק ההפך.
+\end_layout
+
+\begin_layout Standard
+כאשר רוצים להראות כי משפט שמתחיל ב-
+\begin_inset Quotes qrd
+\end_inset
+
+קיים...
+\begin_inset Quotes qrd
+\end_inset
+
+ נכון - מספיק לתת רק דוגמה - כי אנחנו רוצים להראות ש
+\series bold
+קיים
+\series default
+ משהו.
+\end_layout
+
+\begin_layout Standard
+מצד שני: אם רוצים להראות ש
+\bar under
+לא
+\bar default
+ קיים משהו צריך לעבור על הכל כדי להראות שלא קיים, ולכן גם כאן צריך הוכחה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "lightgray"
+status open
+
+\begin_layout Plain Layout
+ניתן לראות את הדברים גם באופן הבא:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\begin{gathered}\forall x\equiv\neg\exists\neg x\\
+\exists x=\neg\forall\neg x
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+כאשר 
+\begin_inset Formula $\neg$
+\end_inset
+
+ הוא סימן השלילה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+קבוצות
+\end_layout
+
+\begin_layout Notation
+הקבוצה 
+\begin_inset Formula $A=\left\{ x\in\mathbb{N},x>3\right\} $
+\end_inset
+
+ פירושה קבוצת כל המספרים הגדולים מ-
+\begin_inset Formula $3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark*
+יש כל מיני דרכים לכתוב קבוצה כזאת.
+ למשל: 
+\begin_inset Formula $\left\{ x\in\mathbb{N};x>3\right\} $
+\end_inset
+
+ או 
+\begin_inset Formula $\left\{ x\big|x\in\mathbb{N}\wedge x>3\right\} $
+\end_inset
+
+ וכו'....
+ 
+\end_layout
+
+\begin_layout Remark*
+העיקר שיהיה ברור מהם אברי הקבוצה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+אפשרויות של קבוצות
+\end_layout
+
+\begin_layout Standard
+נניח ונתונות לנו שתי קבוצות: 
+\begin_inset Formula $A,B$
+\end_inset
+
+ אזי יש מספר אפשרויות:
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+\begin_inset Formula $A=B$
+\end_inset
+
+
+\bar default
+ - שוויון בין קבוצות - כל איבר ב-
+\begin_inset Formula $A$
+\end_inset
+
+ נמצא ב-
+\begin_inset Formula $B$
+\end_inset
+
+ וכל איבר ב-
+\begin_inset Formula $B$
+\end_inset
+
+ נמצא ב-
+\begin_inset Formula $A$
+\end_inset
+
+.
+ או: 
+\begin_inset Formula $x\in A\iff x\in B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+
+\bar default
+ - הכלה של 
+\begin_inset Formula $A$
+\end_inset
+
+ ב-
+\begin_inset Formula $B$
+\end_inset
+
+ - כל איבר ב-
+\begin_inset Formula $A$
+\end_inset
+
+ נמצא ב-
+\begin_inset Formula $B$
+\end_inset
+
+, אבל לא בהכרח כל איבר ב-
+\begin_inset Formula $B$
+\end_inset
+
+ נמצא ב-
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x\in A\Rightarrow x\in B$
+\end_inset
+
+.
+ ניתן לשים לב כי אם קיים איבר ב-
+\begin_inset Formula $B$
+\end_inset
+
+ שלא קיים ב-
+\begin_inset Formula $A$
+\end_inset
+
+ הפסוק 
+\begin_inset Formula $x\in A\Rightarrow x\in B$
+\end_inset
+
+ מקבל ערך אמת....
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B\subseteq A$
+\end_inset
+
+ - כנ
+\begin_inset Quotes qrd
+\end_inset
+
+ל.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+\begin_inset Formula $A\subsetneq B$
+\end_inset
+
+
+\bar default
+ - 
+\begin_inset Formula $A$
+\end_inset
+
+ מוכלת ממש ב-
+\begin_inset Formula $B$
+\end_inset
+
+ - כל איבר ב-
+\begin_inset Formula $A$
+\end_inset
+
+ נמצא ב-
+\begin_inset Formula $B$
+\end_inset
+
+, וקיים לפחות איבר אחד ב-
+\begin_inset Formula $B$
+\end_inset
+
+ שאינו נמצא ב-
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+\begin_inset Formula $A\neq B$
+\end_inset
+
+
+\bar default
+ - אם קיים איבר אחד לפחות בכל קבוצה שאינו קיים בקבוצה השנייה.
+ למשל: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A=\left\{ 1,2\right\} ,B=\left\{ 1,3\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הקבוצות זרות
+\bar default
+ - לא קיים שום איבר שנמצא בשתי הקבוצות.
+\end_layout
+
+\begin_layout Standard
+כעת, אם נרצה להוכיח טענה מסוימת על שתי קבוצות, למשל 
+\begin_inset Formula $A\subsetneq B$
+\end_inset
+
+, אזי זה אומר ש:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+כל
+\series default
+ איבר ב-
+\begin_inset Formula $A$
+\end_inset
+
+ נמצא ב-
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+קיים
+\series default
+ איבר ב-
+\begin_inset Formula $B$
+\end_inset
+
+ שלא קיים ב-
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי נשים לב שמדובר כאן ב
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "subsec:הוכחות-עם-כמתים"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, ולכן יש להוכיח כאן שתי הוכחות בנפרד.
+\end_layout
+
+\begin_layout Standard
+נניח כי 
+\begin_inset Formula $A=\left\{ x,x\in\mathbb{N}\wedge x>7\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $B=\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הוכחת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+:
+\end_layout
+
+\begin_layout Proof
+כל מספר טבעי גדול מ-
+\begin_inset Formula $7$
+\end_inset
+
+ נמצא ב-
+\begin_inset Formula $A$
+\end_inset
+
+ והיות הוא מספר טבעי אזי הוא גם ב-
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הוכחת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $3\in B$
+\end_inset
+
+ כי הוא מספר טבעי, אבל 
+\begin_inset Formula $3\notin A$
+\end_inset
+
+ כי הוא קטן מ-
+\begin_inset Formula $7$
+\end_inset
+
+, ומצאנו איבר כנדרש.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת נניח והקבוצות הן מהצורה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{gathered}A=\left\{ x\Big|x\mid a\right\} ,\,B=\left\{ x\Big|x\mid b\right\} \end{gathered}
+\]
+
+\end_inset
+
+ בשביל להוכיח את היחסים בניהם צריך להשתמש בהגדרת היחס 
+\begin_inset Quotes qld
+\end_inset
+
+מחלק את
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename The Three Philosophers (oil on canvas).jpg
+	lyxscale 50
+	scale 120
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Large 
+\backslash
+adforn{19}
+\backslash
+adforn{12}
+\backslash
+adforn{49}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+תורת הקבוצה
+\end_layout
+
+\begin_layout Subsection
+דיאגרמת-ון לשלוש קבוצות
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:דיאגרמת-ון-לשלוש-קבוצות"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כיצד ניתן לדעת מה הדיאגרמה של: 
+\begin_inset Formula $\left(A\cap B\right)\oplus C$
+\end_inset
+
+? )בהינתן שלוש קבוצות(.
+\end_layout
+
+\begin_layout Standard
+או האם שני ביטויים הם שקולים?
+\end_layout
+
+\begin_layout Standard
+לשם כך נסתכל על הדיאגרמה הבאה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+דיאגרמת ון לשלוש קבוצות
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[fill opacity=0.3,show background rectangle,rounded corners=1ex
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The circles:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[blue] (0,0) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[red] (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[green] (1.25,-1.5) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (-4,3) rectangle (6.25,-4.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The numbers:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (1.25,-0.55) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,-0.55) {$5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (0,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[left, fill opacity=1] at (0,1) {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (3,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (3,0) {$3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (2,-2.5) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (2,-2.5) {$7$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (1.25,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,1) {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (2.5,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (2.5,-1) {$6$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (0,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (0,-1) {$4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (-2,-3) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (-2,-3) {$8$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The groups:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-3,2) {
+\backslash
+Huge $
+\backslash
+boldsymbol{
+\backslash
+Omega}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-1,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{A}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (3,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{B}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (1.2,-2.7) {
+\backslash
+Huge $
+\backslash
+boldsymbol{C}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת נשים לב כי יש לנו שלוש קבוצות:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{gathered}A=\left\{ 1,2,4,5\right\} \\
+B=\left\{ 2,3,5,6\right\} \\
+C=\left\{ 4,5,6,7\right\} 
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+וכי 
+\begin_inset Formula $8$
+\end_inset
+
+ אומר 
+\begin_inset Quotes qld
+\end_inset
+
+אף-קבוצה
+\begin_inset Quotes qrd
+\end_inset
+
+, כלומר: 
+\begin_inset Formula $"8"=\varnothing$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ניתן לשים לב כי האיבר 
+\begin_inset Formula $"5"$
+\end_inset
+
+ למשל, נמצא בכל הקבוצות, האיבר 
+\begin_inset Formula $"2"$
+\end_inset
+
+ נמצא רק ב-
+\begin_inset Formula $A,B$
+\end_inset
+
+ וכו'...
+\end_layout
+
+\begin_layout Standard
+ולכן נובע מכך כי: 
+\begin_inset Formula $"5"=\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+adforn{14}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+דוגמה למציאת אזור בדיאגרמה
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:דוגמה-למציאת-אזור"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $\left(A\cap B\right)\oplus C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת, אנחנו רוצים לדעת מה זה: 
+\begin_inset Formula $\left(A\cap B\right)\oplus C$
+\end_inset
+
+, איך נדע?
+\end_layout
+
+\begin_layout Standard
+נלך לשלושת הקבוצות שתוארו למעלה, ונראה כי:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(A\cap B\right)\oplus C=\left\{ 2,4,6,7\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ואת האיזורים הללו נסמן בדיאגרמה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+דיאגרמת ון של 
+\begin_inset Formula $\left(A\cap B\right)\oplus C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[fill opacity=0.3,show background rectangle,rounded corners=1ex
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The circles:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[blue] (0,0) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[red] (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[green] (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (-4,3) rectangle (6.25,-4.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The numbers:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (1.25,-0.55) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,-0.55) {$5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (0,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[left, fill opacity=1] at (0,1) {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (3,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (3,0) {$3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (2,-2.5) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (2,-2.5) {$7$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (1.25,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,1) {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (2.5,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (2.5,-1) {$6$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (0,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (0,-1) {$4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (-2,-3) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (-2,-3) {$8$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The groups:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-3,2) {
+\backslash
+Huge $
+\backslash
+boldsymbol{
+\backslash
+Omega}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-1,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{A}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (3,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{B}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (1.2,-2.7) {
+\backslash
+Huge $
+\backslash
+boldsymbol{C}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (0,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,Seashell4] (1.25,-1.5) circle (2cm) (-2.1,2.1) rectangle
+ (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (0,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,Seashell4] (2.25,0) circle (2cm) (-2.1,2.1) rectangle (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,Seashell4] (0,0) circle (2cm) (-2.1,2.1) rectangle (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $A\cap B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כמו-כן, הנה דוגמה פשוטה יותר שמסבירה את הרעיון:
+\end_layout
+
+\begin_layout Standard
+אם נרצה לסמן רק את החיתוך 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+, אזי נראה שהחיתוך עצמו נותן לנו את הקבוצה 
+\begin_inset Formula $\left\{ 2,5\right\} $
+\end_inset
+
+, כי: 
+\begin_inset Formula $A\cap B=\left\{ 2,5\right\} $
+\end_inset
+
+ ואכן:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[fill opacity=0.3,show background rectangle,rounded corners=1ex
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The circles:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[blue] (0,0) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[red] (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[green] (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (-4,3) rectangle (6.25,-4.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The numbers:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (1.25,-0.55) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,-0.55) {$5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (0,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[left, fill opacity=1] at (0,1) {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (3,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (3,0) {$3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (2,-2.5) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (2,-2.5) {$7$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (1.25,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,1) {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (2.5,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (2.5,-1) {$6$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (0,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (0,-1) {$4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[fill opacity=1] (-2,-3) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (-2,-3) {$8$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The groups:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-3,2) {
+\backslash
+Huge $
+\backslash
+boldsymbol{
+\backslash
+Omega}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-1,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{A}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (3,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{B}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (1.2,-2.7) {
+\backslash
+Huge $
+\backslash
+boldsymbol{C}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+clip (0,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill [Seashell4] (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+הוכחה/הפרכה של שיוונים בקבוצות
+\end_layout
+
+\begin_layout Standard
+נניח ונתונים לנו שני ביטויים של קבוצות, למשל:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(A\oplus C^{c}\right)\cap\left(B\oplus C^{c}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left(C\oplus B\right)^{c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+\bar under
+כיצד נדע אם הביטויים שקולים?
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+תשובה.
+ 
+\series default
+נחשב את הערך של כל אחד מהביטויים הנ
+\begin_inset Quotes qrd
+\end_inset
+
+ל ונקבל 
+\bar under
+שתי
+\bar default
+ קבוצות.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\bar under
+אם הקבוצות שוות:
+\emph default
+\bar default
+ אזי הביטויים שקולים ונוכל להראות זאת ע
+\begin_inset Quotes qrd
+\end_inset
+
+י סימון האזורים בדיאגרמה.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\bar under
+אם הקבוצות אינן שוות:
+\emph default
+\bar default
+ אזי הביטויים אינם שקולים וכהוכחה לכך ניתן לתת את הקבוצות 
+\begin_inset Formula $A,B,C$
+\end_inset
+
+ שהוזכרו כאן: 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "subsec:דיאגרמת-ון-לשלוש-קבוצות"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Huge 
+\backslash
+adforn{45}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+מציאת קבוצות תחת אילוצים
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "5pt"
+shadowsize "6pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+\bar under
+הערה חשובה:
+\series default
+\bar default
+ כאן המספרים אינם איברים בקבוצה כמו ב-
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "subsec:דוגמה-למציאת-אזור"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ - 
+\begin_inset Newline newline
+\end_inset
+
+אלא הם מציינים אזורים בדיאגרמה.
+ למשל: 
+\begin_inset Formula $4,5$
+\end_inset
+
+ זה 
+\begin_inset Formula $A\cap C$
+\end_inset
+
+; ורק 
+\begin_inset Formula $7$
+\end_inset
+
+ זה 
+\begin_inset Formula $C\backslash\left(A\cap B\right)$
+\end_inset
+
+ וכו'...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אנחנו מעוניינים לבנות קבוצות תחת אילוצים.
+\end_layout
+
+\begin_layout Standard
+נניח ונתונים לנו אילוצים מהצורה 
+\begin_inset Formula $C\subseteq A\oplus B$
+\end_inset
+
+, אזי נסתכל על אילוצים אלו ככה:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset Formula ${\color{blue}C}\subseteq{\color{green}A\oplus B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי 
+\begin_inset Formula $C$
+\end_inset
+
+ )בכחול( - תהיה הקבוצה שמעניינת אותנו ואילו 
+\begin_inset Formula $A\oplus B$
+\end_inset
+
+ )בירוק( יהיה האילוץ, וכך תיראה דיאגרמת-ון של אילוץ זה:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[fill opacity=0.3,show background rectangle,rounded corners=1ex
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The circles:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[blue] (0,0) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[red] (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[green] (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (-4,3) rectangle (6.25,-4.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The numbers:
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (1.25,-0.55) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,-0.55) {$5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (0,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[left, fill opacity=1] at (0,1) {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (3,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (3,0) {$3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (2,-2.5) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (2,-2.5) {$7$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (1.25,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,1) {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (2.5,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (2.5,-1) {$6$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (0,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (0,-1) {$4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (-2,-3) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (-2,-3) {$8$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The groups:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-3,2) {
+\backslash
+Huge $
+\backslash
+boldsymbol{
+\backslash
+Omega}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-1,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{A}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (3,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{B}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (1.2,-2.7) {
+\backslash
+Huge $
+\backslash
+boldsymbol{C}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (0,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,blue] (2.25,0) circle (2cm) (-2.1,2.1) rectangle (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,blue] (0,0) circle (2cm) (-2.1,2.1) rectangle (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אנחנו מסתכלים על 
+\begin_inset Formula $A\oplus B$
+\end_inset
+
+, אבל 
+\series bold
+רק
+\series default
+ על מה שנמצא 
+\series bold
+\bar under
+בתוך
+\series default
+\bar default
+ 
+\begin_inset Formula $C$
+\end_inset
+
+, כי מה שמחוץ ל-
+\begin_inset Formula $C$
+\end_inset
+
+ לא מעניין אותנו כי אנחנו רוצים לבנות רק את קבוצה 
+\begin_inset Formula $C$
+\end_inset
+
+ תחת האילוץ 
+\begin_inset Formula $A\oplus B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אנחנו רואים שהאזורים הרלוונטים למקרה שלנו אלו אזורים 
+\begin_inset Formula $4,6$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ונניח כי ישנו עוד אילוץ: 
+\begin_inset Formula $B\subseteq A\backslash C$
+\end_inset
+
+, אזי עכשיו הדיאגרמה תיראה כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[fill opacity=0.3,show background rectangle,rounded corners=1ex
+]
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The circles:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[blue] (0,0) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[red] (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[green] (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (-4,3) rectangle (6.25,-4.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The numbers:
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (1.25,-0.55) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,-0.55) {$5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (0,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[left, fill opacity=1] at (0,1) {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (3,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (3,0) {$3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (2,-2.5) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right, fill opacity=1] at (2,-2.5) {$7$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (1.25,1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (1.25,1) {$2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (2.5,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (2.5,-1) {$6$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (0,-1) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (0,-1) {$4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+fill[fill opacity=1] (-2,-3) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[below, fill opacity=1] at (-2,-3) {$8$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	%The groups:
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-3,2) {
+\backslash
+Huge $
+\backslash
+boldsymbol{
+\backslash
+Omega}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (-1,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{A}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (3,1) {
+\backslash
+Huge $
+\backslash
+boldsymbol{B}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [fill opacity=1] at (1.2,-2.7) {
+\backslash
+Huge $
+\backslash
+boldsymbol{C}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (0,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,blue] (2.25,0) circle (2cm) (-2.1,2.1) rectangle (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (1.25,-1.5) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,blue!50!red] (0,0) circle (2cm) (-2.1,2.1) rectangle (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (0,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip (2.25,0) circle (2cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+fill[even odd rule,red] (1.25,-1.5) circle (2cm) (-2.1,2.1) rectangle (4.35,-3.6);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+האילוץ 
+\begin_inset Formula $B\subseteq A\backslash C$
+\end_inset
+
+ סומן באדום, והיכן שנמצא 
+\begin_inset Formula $6$
+\end_inset
+
+ בגלל שכבר היה שם כחול הצבע הוא שילוב.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+
+\backslash
+adforn{70}
+\end_layout
+
+\end_inset
+
+
+\bar under
+חשוב לזכור: אין צורך לחזור על אזור שכבר סימנו! ברגע שסימנו אותו הוא יכלל
+ בבניה.
+
+\series default
+\bar default
+ 
+\end_layout
+
+\begin_layout Standard
+כעת, אם נרצה לבנות את שלושת הקבוצות 
+\begin_inset Formula $A,B,C$
+\end_inset
+
+ אזי נוכל להיעזר בדיאגרמה:
+\end_layout
+
+\begin_layout Standard
+נסתכל על האזורים הרלוונטיים: 
+\begin_inset Formula $2,4,6$
+\end_inset
+
+ - ונבנה בהתאם את הקבוצות:
+\end_layout
+
+\begin_layout Standard
+בכל אזור שסימנו נוסיף איבר )במקרה שלנו האיבר יהיה מספר האזור( ואז פשוט נבנה
+ את הקבוצות לפי הדיאגרמה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{gathered}A=\left\{ 2,4\right\} \\
+B=\left\{ 2,6\right\} \\
+C=\left\{ 4,6\right\} 
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ואכן נוכל לראות כי הקבוצות עומדות בכל התנאים שהצבנו להן....
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "2pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "brown"
+backgroundcolor "lightgray"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+הערה:
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\family sans
+תמיד חשוב לבדוק את הקבוצות אחרי שמצאנו את התנאים.
+ כלומר, לראות שהקבוצות שמצאנו אכן מקיימות את התנאים )אילוצים(.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Huge 
+\backslash
+adforn{19}
+\backslash
+adforn{4}
+\backslash
+adforn{49}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

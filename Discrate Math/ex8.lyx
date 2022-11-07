@@ -1,0 +1,1382 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+\newfontfamily{\ls}{League Script}
+\newfontfamily{\am}{Amatic SC}
+
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern -3pt
+  \hbox to \textwidth{\hfill\vrule height 0.4pt width .4\textwidth}
+  \kern 2.6pt
+}}
+
+\usepackage[x11names,usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{adforn}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+
+\addtokomafont{disposition}{\rmfamily}
+\renewcommand\qedsymbol{$\blacksquare$}
+\rhead{\textbf{תגבור דיסקרטית}}
+\lhead{\emph{תרגיל 8}}
+\cfoot{\adforn{27}\ls\textbf{\hspace{0.2cm}\thepage\hspace{0.2cm}}\adforn{61}}
+\renewcommand\qedsymbol{\Huge \adforn{71}}
+\end_preamble
+\options numbers=noenddot
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-bytype
+theorems-ams-extended-chap-bytype
+theorems-ams-extended-bytype
+theorems-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\bar under
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+fontsize{25}{40}
+\backslash
+selectfont{פונקציות ואינדוקציה}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename The Embarkation of the Queen of Sheba.jpg
+	lyxscale 20
+	scale 28
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+פונקציות
+\end_layout
+
+\begin_layout Subsection
+מהי פונקציה?
+\end_layout
+
+\begin_layout Standard
+בהינתן שתי קבוצות 
+\begin_inset Formula $A$
+\end_inset
+
+ ו\SpecialChar softhyphen
+
+\begin_inset Formula $B$
+\end_inset
+
+ נגדיר 
+\series bold
+\bar under
+פונקציה מ-
+\begin_inset Formula $A$
+\end_inset
+
+ ל-
+\begin_inset Formula $B$
+\end_inset
+
+
+\series default
+\bar default
+ באופן הבא:
+\end_layout
+
+\begin_layout Definition
+תהיינה שתי קבוצות 
+\begin_inset Formula $A,B$
+\end_inset
+
+, 
+\begin_inset Formula $f$
+\end_inset
+
+ היא פונקציה מ-
+\begin_inset Formula $A$
+\end_inset
+
+ ל-
+\begin_inset Formula $B$
+\end_inset
+
+ אם 
+\series bold
+\size large
+\bar under
+לכל
+\series default
+\size default
+\bar default
+ 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ 
+\series bold
+\size large
+\bar under
+קיים
+\series default
+\size default
+\bar default
+ 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $f\left(a\right)=b$
+\end_inset
+
+.
+ [פירוש הסימן הוא ש-
+\begin_inset Formula $a$
+\end_inset
+
+ נשלח ל-
+\begin_inset Formula $b$
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Definition
+כלומר, אנחנו חייבים 
+\series bold
+שלכל
+\series default
+ איבר ב-
+\begin_inset Formula $A$
+\end_inset
+
+ יהיה איבר אחד בדיוק ב-
+\begin_inset Formula $B$
+\end_inset
+
+ ש-
+\begin_inset Formula $a\to b$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Definition
+לשתי הקבוצות הללו יש שמות:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\size large
+\begin_inset Formula $A$
+\end_inset
+
+ - 
+\begin_inset Quotes qld
+\end_inset
+
+תחום
+\begin_inset Quotes qrd
+\end_inset
+
+ - הקבוצה שממנה אנחנו יוצאים.
+\end_layout
+
+\begin_layout Plain Layout
+
+\size large
+\begin_inset Formula $B$
+\end_inset
+
+ - 
+\begin_inset Quotes qld
+\end_inset
+
+טווח
+\begin_inset Quotes qrd
+\end_inset
+
+ - הקבוצה שאליה אנחנו מגיעים.
+\end_layout
+
+\begin_layout Plain Layout
+פונקציה, היא פעולה שלוקחת 
+\series bold
+כל
+\series default
+ אובייקט מקבוצת 
+\emph on
+התחום
+\emph default
+ ומעבירה אותו לאובייקט 
+\series bold
+אחד
+\series default
+ בקבוצת 
+\emph on
+הטווח
+\emph default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+למשל:
+\end_layout
+
+\begin_layout Standard
+נניח כי:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{gathered}A=\left\{ 1,2,3,4\right\} \\
+B=\left\{ \alpha,\beta,\chi,\mu\right\} 
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,shorten
+ >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[fill=Khaki!50!blue!10,thin] (0,0) ellipse (1 and 2.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[fill=Khaki!50!blue!10,thin] (4,0) ellipse (1 and 2.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+x/
+\backslash
+y/
+\backslash
+z in {1.5/1/
+\backslash
+alpha,.5/2/
+\backslash
+beta,-.5/3/
+\backslash
+chi,-1.5/4/
+\backslash
+mu}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+filldraw[black] (0,
+\backslash
+x) circle (2pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node (
+\backslash
+y) at (0,
+\backslash
+x) [left]{$
+\backslash
+y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+filldraw[black] (4,
+\backslash
+x) circle (2pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node (
+\backslash
+y+4) at (4,
+\backslash
+x) [right]{$
+\backslash
+z$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (A) at (0,3) {$A$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (B) at (4,3) {$B$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (f) at (2,3) {$
+\backslash
+boldsymbol{f}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (1) to[bend left](1+4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (2) to[bend left](1+4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (3) to[bend left](3+4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (4) to[bend left](4+4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+גרף של פונקציה 
+\begin_inset Formula $f$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:גרף-של-פונקציהF"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולכן למשל: 
+\begin_inset Formula $f\left(1\right)=\alpha$
+\end_inset
+
+ וגם 
+\begin_inset Formula $f\left(2\right)=\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(4\right)=\mu$
+\end_inset
+
+ ואין שום איבר ב-
+\begin_inset Formula $A$
+\end_inset
+
+ שמוביל ל-
+\begin_inset Formula $\beta$
+\end_inset
+
+, לכן לא נוכל באמצעות 
+\begin_inset Formula $f$
+\end_inset
+
+ להגיע אל 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+פונקציה חד-חד ערכית
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:פונקציה-חד-חד-ערכית"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+פונקציה חד-חד-ערכית )חח
+\begin_inset Quotes qrd
+\end_inset
+
+ע( היא פונקציה שעונה להגדרה הבאה:
+\end_layout
+
+\begin_layout Definition
+עבור 
+\begin_inset Formula $a_{1},a_{2}\in A$
+\end_inset
+
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ היא חח
+\begin_inset Quotes qrd
+\end_inset
+
+ע אם מתקיים הדבר הבא:
+\begin_inset Formula 
+\[
+a_{1}\neq a_{2}\Longrightarrow f\left(a_{1}\right)\neq f\left(a_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+כלומר, אם 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+ ו-
+\begin_inset Formula $a_{2}$
+\end_inset
+
+ שונים - אז 
+\series bold
+בהכרח
+\series default
+ 
+\begin_inset Formula $f\left(a_{1}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $f\left(a_{2}\right)$
+\end_inset
+
+ שונים.
+\end_layout
+
+\begin_layout Definition
+או, במילים אחרות: אם 
+\begin_inset Formula $f\left(a_{1}\right)=f\left(a_{2}\right)$
+\end_inset
+
+ אזי 
+\series bold
+בהכרח
+\series default
+ 
+\begin_inset Formula $a_{1}=a_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+במילים פשוטות יותר אפשר לומר שפונקציה חח
+\begin_inset Quotes qrd
+\end_inset
+
+ע היא פונקציה שאם איבר מסוים בקבוצת התחום נשלח לאיבר כלשהו בקבוצת הטווח,
+ 
+\bar under
+אף איבר אחר )מקבוצת התחום( לא יגיע לאותו איבר מקבוצת הטווח
+\bar default
+, כלומר - הוא נתפס.
+\end_layout
+
+\begin_layout Question
+למה ההגדרה לא אומרת את הדבר הבא: עבור 
+\begin_inset Formula $b_{1},b_{2}\in B$
+\end_inset
+
+ )קבוצת הטווח( אם 
+\begin_inset Formula $b_{1}\neq b_{2}$
+\end_inset
+
+ אזי בהכרח שני האברים ששלחו אותם שונים?
+\end_layout
+
+\begin_layout Solution
+כי אף אחד לא הבטיח לנו שלכל 
+\begin_inset Formula $b$
+\end_inset
+
+ קיים 
+\begin_inset Formula $a$
+\end_inset
+
+ שיגיע אליו.
+ 
+\end_layout
+
+\begin_layout Subsection
+פונקצית על
+\end_layout
+
+\begin_layout Definition
+פונקציה 
+\begin_inset Formula $f$
+\end_inset
+
+ תיקרא 
+\begin_inset Quotes qld
+\end_inset
+
+על
+\begin_inset Quotes qrd
+\end_inset
+
+ אם לכל 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ )קבוצת הטווח( קיים 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ )בניגוד לפונקציה חד-חד ערכית - 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:פונקציה-חד-חד-ערכית"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, כאן יכול להיות שמספר איברים ב-
+\begin_inset Formula $a$
+\end_inset
+
+ יובילו לאותו 
+\begin_inset Formula $b$
+\end_inset
+
+( כך ש-
+\begin_inset Formula $f\left(a\right)=b$
+\end_inset
+
+.
+ במילים אחרות - 
+\series bold
+כל
+\series default
+ 
+\begin_inset Formula $B$
+\end_inset
+
+ 
+\begin_inset Quotes qld
+\end_inset
+
+מכוסה
+\begin_inset Quotes qrd
+\end_inset
+
+, אין איבר ב-
+\begin_inset Formula $B$
+\end_inset
+
+ שלא מגיעים אליו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+פונקציות של קבוצות אינסופיות
+\end_layout
+
+\begin_layout Standard
+ניתן לשרטט פונקציה כמו באיור 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:גרף-של-פונקציהF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ או לרשום את הפונקציה כאוסף זוגות סדורים, כאשר מדובר בקבוצות סופיות.
+\end_layout
+
+\begin_layout Standard
+אבל כאשר מדובר בקבוצות אינסופיות, נהוג להציג את הפונקציות באופן הבא:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\begin{gathered}f:\mathbb{N}\to\mathbb{N}\\
+f\left(x\right)=x^{2}
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+במקרה הזה, נוכל לקחת כל מספר טבעי ולהעלות אותו בריבוע, אבל 
+\begin_inset Formula $\cancel{f\left(2.32\right)}$
+\end_inset
+
+ לא ייתכן כי מדובר רק על הטבעיים.
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+אפשר גם להתייחס לקבוצת מקרים:
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\begin{gathered}g:\mathbb{R}\to\mathbb{R}\\
+g=\begin{cases}
+x<0 & x\\
+0 & 0\\
+x\in\left(0,2\right) & \pi\\
+x\ge2 & 3x+5
+\end{cases}
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+בצד שמאל תמיד תופיע לנו קבוצה התחום 
+\series bold
+\bar under
+במלואה
+\series default
+\bar default
+, ואילו בצד ימין יופיעו 
+\series bold
+רק
+\series default
+ ערכים מקבוצת הטווח.
+\end_layout
+
+\begin_layout Example
+במקרה הזה יהיה לנו למשל:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $g\left(-3.2\right)=-3.2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $g\left(0\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $g\left(\sqrt{2}\right)=\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $g\left(1\right)=\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $g\left(3\right)=14$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Example
+נשים לב שישנם ערכים ב-
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ שלעולם לא נוכל אליהם עם הפונקציה הנ
+\begin_inset Quotes qrd
+\end_inset
+
+ל.
+ למשל, לא קיים 
+\begin_inset Formula $a\in\mathbb{R}$
+\end_inset
+
+ כך ש: 
+\begin_inset Formula $g\left(a\right)=1$
+\end_inset
+
+ .
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\begin{gathered}h:\mathbb{R}\to\mathbb{N}\\
+h=\begin{cases}
+x\le0 & \left\lfloor -2x\right\rfloor \\
+x>0 & 3
+\end{cases}
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+אם לא היינו מעגלים למטה במקרה של 
+\begin_inset Formula $x\le0$
+\end_inset
+
+ אזי הפונקציה לא הייתה תקנית מכיוון ש-
+\begin_inset Formula $h\left(-2.3\right)=4.6$
+\end_inset
+
+ אבל 
+\begin_inset Formula $4.6\notin\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+דוגמאות לאינדוקציה שלמה
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $n=3x+4y$
+\end_inset
+
+ לכל 
+\begin_inset Formula $n\ge6$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula $6\le n\in\mathbb{N}$
+\end_inset
+
+ ניתן להציגו כ-
+\begin_inset Formula $n=3x+4y$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $x,y\in\mathbb{N}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Proof
+עבור 
+\begin_inset Formula $k\in\mathbb{N}$
+\end_inset
+
+ ניתן לחלק את המספרים 
+\begin_inset Formula $n\ge6$
+\end_inset
+
+ לשלוש קבוצות:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\begin{gathered}N_{0}=\left\{ 3k\Big|k\ge2\right\} \\
+N_{1}=\left\{ 3k+1\Big|k\ge2\right\} \\
+N_{2}=\left\{ 3k+2\Big|k\ge2\right\} 
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+בה
+\begin_inset Quotes qrd
+\end_inset
+
+כ נוכיח את הטענה באינדוקציה על 
+\begin_inset Formula $\boldsymbol{k}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\series bold
+\bar under
+בסיס האינדוקציה:
+\series default
+\bar default
+ עבור 
+\begin_inset Formula $k=2$
+\end_inset
+
+ נקבל: 
+\begin_inset Formula $n=3\cdot2+1=7$
+\end_inset
+
+ , ואכן: 
+\begin_inset Formula $7=3+4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\series bold
+\bar under
+שלב האינדוקציה:
+\series default
+\bar default
+ נוכיח את הטענה עבור 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+3k+1=n=3x+4y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+כעת נראה עבור 
+\begin_inset Formula $k+1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\begin{gathered}3\left(k+1\right)+1=3x+4y\\
+\Updownarrow
+\end{gathered}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+מהנחת האינדוקציה:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\boldsymbol{\left(3k+1\right)}+3=\boldsymbol{3x+4y}+3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+ולכן:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\left(3k+1\right)+3=3\left(x+1\right)+4y
+\]
+
+\end_inset
+
+ וכמובן ש-
+\begin_inset Formula $x+1,y\in\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מכאן שהאינדוקציה נכונה עבור 
+\begin_inset Formula $k\ge2$
+\end_inset
+
+ ובאופן דומה היינו יכולים להוכיח עבור 
+\begin_inset Formula $N_{0},N_{2}$
+\end_inset
+
+ והיות כפי שהסברנו קודם:
+\begin_inset Formula 
+\[
+\left\{ n\in\mathbb{N}\Big|n\ge6\right\} =N_{0}\cup N_{1}\cup N_{2}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+ולכן הטענה נכונה עבור על 
+\begin_inset Formula $n\ge6$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzstyle {background rectangle}=[fill=Yellow2!20]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[show background rectangle,rounded corners=2ex,shorten
+ >=1pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[fill=Khaki!50!blue!10,thin] (0,0) ellipse (1 and 2.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[fill=Khaki!50!blue!10,thin] (4,0) ellipse (1 and 2.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+x/
+\backslash
+y/
+\backslash
+z in {1.5/1/
+\backslash
+alpha,.5/2/
+\backslash
+beta,-.5/3/
+\backslash
+chi,-1.5/4/
+\backslash
+mu}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+filldraw[black] (0,
+\backslash
+x) circle (2pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node (
+\backslash
+y) at (0,
+\backslash
+x) [left]{$
+\backslash
+y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+filldraw[black] (4,
+\backslash
+x) circle (2pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+node (
+\backslash
+y+4) at (4,
+\backslash
+x) [right]{$
+\backslash
+z$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (A) at (0,3) {$A$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (B) at (4,3) {$B$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (f) at (2,3) {$
+\backslash
+boldsymbol{f}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
